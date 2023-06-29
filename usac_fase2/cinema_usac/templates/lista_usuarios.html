@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Lista de Usuarios</title>
+</head>
+<body>
+<h1>Usuarios</h1>
+    <ul>
+        {% for usuario in usuarios %}
+            <li>{{ usuario.nombre }}</li>
+            <a href="{% url 'modificar' usuario.id %}">Modificar</a>
+            <form action="{% url 'eliminar' usuario.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Eliminar</button>
+            </form>
+        {% endfor %}
+
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/inicio">Regresar al inicio</a>
+           </li>
+</body>
+</html>

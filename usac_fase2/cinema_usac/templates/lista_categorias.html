@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Lista de Categorías</title>
+</head>
+<body>
+    <h1>Lista de Categorías</h1>
+    <ul>
+        {% for categoria in categorias %}
+            <li><a href="{% url 'detalle_categoria' categoria.id %}">{{ categoria.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Eliminar Tarjeta</title>
+</head>
+<body>
+    <h1>Eliminar Tarjeta</h1>
+    <p>¿Estás seguro de que deseas eliminar esta tarjeta?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+</body>
+</html>

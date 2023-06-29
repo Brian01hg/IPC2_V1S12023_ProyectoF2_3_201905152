@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de peliculas</title>
+  <h1>Peliculas</h1>
+  <style>
+    .carousel {
+      width: 50%;
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto; /* Centrar horizontalmente */
+      display: flex;
+      align-items: center; /* Centrar verticalmente */
+      justify-content: center; /* Centrar horizontalmente */
+    }
+
+    .carousel img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+      height: auto;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+
+    .carousel img.active {
+      opacity: 1;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      font-size: 24px;
+      text-align: center;
+      line-height: 40px;
+      cursor: pointer;
+    }
+
+    .carousel-btn.left {
+      left: 10px;
+    }
+
+    .carousel-btn.right {
+      right: 10px;
+    }
+
+    body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+.container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width: 800px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead {
+	th {
+		background-color: #55608f;
+	}
+}
+
+tbody {
+	tr {
+		&:hover {
+			background-color: rgba(255,255,255,0.3);
+		}
+	}
+	td {
+		position: relative;
+		&:hover {
+			&:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: -9999px;
+				bottom: -9999px;
+				background-color: rgba(255,255,255,0.2);
+				z-index: -1;
+			}
+		}
+	}
+}
+</style>
+</head>
+<body>
+  <div class="carousel">
+    <img src="https://cdn.marvel.com/content/1x/avengersendgame_lob_crd_05.jpg" alt="Avengers: Endgame" title="Avengers: Endgame" class="active">
+    <div class="image-title">Avengers: Endgame</div>
+    <img src="https://i0.wp.com/eltallerdehector.com/wp-content/uploads/2022/07/super-mario-bros.png?fit=800%2C800&ssl=1" alt="Imagen 2" title="Super Mario Bros">
+    <div class="image-title">Super Mario Bros</div>
+    <img src="https://w7.pngwing.com/pngs/680/842/png-transparent-mario-bross-thumbnail.png" alt="Imagen 3" title="Mario Bros Thumbnail">
+    <div class="image-title">Mario Bros Thumbnail</div>
+    <div class="carousel-btn left" onclick="prevImage()">&lt;</div>
+    <div class="carousel-btn right" onclick="nextImage()">&gt;</div>
+  </div>
+
+  <script>
+    var carousel = document.querySelector('.carousel');
+    var images = carousel.querySelectorAll('img');
+    var titles = carousel.querySelectorAll('.image-title');
+    var currentIndex = 0;
+
+    function showImage(index) {
+      for (var i = 0; i < images.length; i++) {
+        images[i].classList.remove('active');
+        titles[i].style.opacity = '0';
+      }
+      images[index].classList.add('active');
+      titles[index].style.opacity = '1';
+    }
+
+    function prevImage() {
+      currentIndex--;
+      if (currentIndex < 0) {
+        currentIndex = images.length - 1;
+      }
+      showImage(currentIndex);
+    }
+
+    function nextImage() {
+      currentIndex++;
+      if (currentIndex >= images.length) {
+        currentIndex = 0;
+      }
+      showImage(currentIndex);
+    }
+  </script>
+  
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/inicio">Regresar al inicio</a>
+   </li>
+</body>
+</html>

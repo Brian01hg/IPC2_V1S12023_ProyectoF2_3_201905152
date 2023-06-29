@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Eliminar Sala</title>
+</head>
+<body>
+    <h1>Eliminar Sala</h1>
+
+    <p>¿Estás seguro de que deseas eliminar esta sala?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Eliminar</button>
+    </form>
+</body>
+</html>

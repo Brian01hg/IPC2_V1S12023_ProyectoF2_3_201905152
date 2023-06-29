@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestión de Salas</title>
+</head>
+<body>
+    <h1>Salas de Cine</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Número de Sala</th>
+                <th>Asientos</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sala in salas %}
+            <tr>
+                <td>{{ sala.numero }}</td>
+                <td>{{ sala.asientos }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Archivo XML generado:</h2>
+    <p>{{ xml_path }}</p>
+
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/inicio">Regresar al inicio</a>
+       </li>
+</body>
+</html>
