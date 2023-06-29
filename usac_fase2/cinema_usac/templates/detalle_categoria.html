@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Detalle de Categoría</title>
+</head>
+<body>
+    <h1>Detalle de Categoría</h1>
+    <h2>{{ categoria.nombre }}</h2>
+    <ul>
+        {% for pelicula in categoria.peliculas %}
+            <li><a href="{% url 'detalle_pelicula' pelicula.id %}">{{ pelicula.titulo }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Gestión de Tarjetas</title>
+</head>
+<body>
+    <h1>Tarjetas de Débito/Crédito</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo</th>
+                <th>Número</th>
+                <th>Titular</th>
+                <th>Fecha de Expiración</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarjeta in tarjetas %}
+            <tr>
+                <td>{{ tarjeta.tipo }}</td>
+                <td>{{ tarjeta.numero }}</td>
+                <td>{{ tarjeta.titular }}</td>
+                <td>{{ tarjeta.fecha_expiracion }}</td>
+                <td>
+                    {% if tarjeta.id %}
+                        <a href="{% url 'modificar_tarjeta' tarjeta.id %}">Editar</a>
+                        <a href="{% url 'eliminar_tarjeta' tarjeta.id %}">Eliminar</a>
+                    {% else %}
+                        Sin ID válido
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- Agregar formulario para agregar tarjeta -->
+    <form method="POST" action="{% url 'agregar_tarjeta' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Agregar Tarjeta</button>
+    </form>
+
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:8000/inicio">Regresar al inicio</a>
+    </li>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Título de tu aplicación</title>
+  <!-- Agrega aquí tus etiquetas <link> y <script> para cargar estilos CSS y archivos JavaScript -->
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="{% url 'lista_peliculas' %}">Películas</a></li>
+        <li><a href="{% url 'lista_categorias' %}">Categorías</a></li>
+        <!-- Agrega aquí otros enlaces de navegación -->
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <!-- Contenido específico de cada página -->
+      {% block content %}
+      {% endblock %}
+    </div>
+  </main>
+  <footer>
+    <p>© 2023 Nombre de tu aplicación. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

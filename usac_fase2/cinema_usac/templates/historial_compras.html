@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Historial de Compras</title>
+</head>
+<body>
+  <h2>Historial de Compras</h2>
+  {% if historial %}
+    <table>
+      <thead>
+        <tr>
+          <th>Película</th>
+          <th>Fecha</th>
+          <th>Hora</th>
+          <th>Número de Boletos</th>
+          <th>Número de Asiento</th>
+          <th>Monto Pagado</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for compra in historial %}
+          <tr>
+            <td>{{ compra.pelicula }}</td>
+            <td>{{ compra.fecha }}</td>
+            <td>{{ compra.hora }}</td>
+            <td>{{ compra.num_boletos }}</td>
+            <td>{{ compra.num_asiento }}</td>
+            <td>{{ compra.monto }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No se encontraron compras realizadas.</p>
+  {% endif %}
+</body>
+</html>

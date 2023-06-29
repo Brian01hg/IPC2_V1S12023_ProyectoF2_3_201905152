@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modificar Usuario</title>
+</head>
+<body>
+    <h1>Modificar Usuario</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="nombre_nuevo">Nuevo Nombre:</label>
+        <input type="text" id="nombre_nuevo" name="nombre_nuevo" value="{{ usuario.nombre }}">
+
+        <label for="apellido_nuevo">Nuevo Apellido:</label>
+        <input type="text" id="apellido_nuevo" name="apellido_nuevo" value="{{ usuario.apellido }}">
+
+        <label for="correo_nuevo">Nuevo Correo:</label>
+        <input type="text" id="correo_nuevo" name="correo_nuevo" value="{{ usuario.correo }}">
+
+        <label for="contraseña_nuevo">Nueva Contraseña:</label>
+        <input type="text" id="contraseña_nuevo" name="contraseña_nuevo" value="{{ usuario.contraseña }}">
+
+        <label for="telefono_nuevo">Nuevo Telefono:</label>
+        <input type="text" id="telefono" name="telefono" value="{{ usuario.telefono }}">
+        
+        <button type="submit">Guardar Cambios</button>
+    </form>
+</body>
+</html>

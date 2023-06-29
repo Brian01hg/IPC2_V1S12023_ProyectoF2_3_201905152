@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Comprar Boletos</title>
+</head>
+<body>
+  <h2>Comprar Boletos</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="id_usuario">Usuario:</label>
+    {{ form.usuario }}
+    <br>
+    <label for="id_pelicula">Película:</label>
+    {{ form.pelicula }}
+    <br>
+    <label for="id_sala">Sala:</label>
+    {{ form.sala }}
+    <br>
+    <label for="id_asientos">Asientos:</label>
+    {{ form.asientos }}
+    <br>
+    <input type="submit" value="Realizar Compra">
+  </form>
+</body>
+</html>
