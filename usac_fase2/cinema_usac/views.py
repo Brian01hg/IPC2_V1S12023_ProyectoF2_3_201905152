@@ -43,6 +43,21 @@ class ListaEnlazadaUsuarios:
                 actual = actual.siguiente
             actual.siguiente = nodo.siguiente
 
+#def actualizar_archivo_xml(lista):
+#    root = ET.Element('Usuarios')
+#    actual = lista.cabeza
+#    while actual is not None:
+#        usuario_xml = ET.SubElement(root, 'Usuario')
+#        ET.SubElement(usuario_xml, 'Nombre').text = actual.usuario.nombre
+#        ET.SubElement(usuario_xml, 'Apellido').text = actual.usuario.apellido
+#        ET.SubElement(usuario_xml, 'Correo').text = actual.usuario.correo
+#        ET.SubElement(usuario_xml, 'Contraseña').text = actual.usuario.contraseña
+#        ET.SubElement(usuario_xml, 'Telefono').text = actual.usuario.telefono
+#        actual = actual.siguiente
+#
+#    xml_tree = ET.ElementTree(root)
+#    xml_tree.write('usuarios.xml')
+
 def actualizar_archivo_xml(lista):
     root = ET.Element('Usuarios')
     actual = lista.cabeza
