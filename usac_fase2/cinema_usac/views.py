@@ -73,25 +73,7 @@ def actualizar_archivo_xml(lista):
     xml_tree = ET.ElementTree(root)
     xml_tree.write('usuarios.xml')
 
-#def registro_usuario(request):
-#    if request.method == 'POST':
-#        nombre = request.POST['nombre']
-#        apellido = request.POST['apellido']
-#        correo = request.POST['correo']
-#        contraseña = request.POST['contraseña']
-#        telefono = request.POST['telefono']
-#
-#        usuario = Usuario(nombre=nombre, apellido=apellido, correo=correo, contraseña=contraseña, telefono=telefono)
-#        usuario.save()
-#
-#        lista = ListaEnlazadaUsuarios()
-#        lista.agregar(usuario)
-#
-#        actualizar_archivo_xml(lista)
-#
-#        return redirect('inicio')
-#
-#    return render(request, 'registro.html')
+
 
 def registro_usuario(request):
     if request.method == 'POST':
